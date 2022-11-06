@@ -33,10 +33,10 @@ router.post("/login", (req, res) => {
         });
         res.status(200).json("Se connecter...");
       } else {
-        res.status(401).json("Données incorrectes");
+        res.status(400).json("Données incorrectes");
       }
     })
-    .catch((err) => res.status(500).json({ message: "Server Error" }));
+    .catch((err) => res.status(500).json("Server Error"));
 });
 
 router.get("/verify", (req, res) => {
